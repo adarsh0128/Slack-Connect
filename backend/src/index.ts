@@ -20,7 +20,7 @@ app.use(helmet());
 app.use(
   cors({
     origin:
-      process.env.FRONTEND_URL || "https://slack-connect-taupe.vercel.app/",
+      process.env.FRONTEND_URL || "https://slack-connect-taupe.vercel.app",
     credentials: true,
   })
 );
