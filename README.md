@@ -49,6 +49,7 @@ cd ..
 #### 2.1 Go to Slack API Dashboard
 
 1. Visit https://api.slack.com/apps
+
 2. Click **"Create New App"**
 3. Choose **"From scratch"**
 4. Enter App Name: `"Slack Connect"` (or any name you like)
@@ -73,7 +74,9 @@ cd ..
 1. Still in **"OAuth & Permissions"**
 2. Scroll up to **"Redirect URLs"**
 3. Click **"Add New Redirect URL"**
+
 4. Enter: `https://localhost:3001/api/auth/slack/callback`
+
 5. Click **"Add"**
 6. Click **"Save URLs"**
 
@@ -108,7 +111,9 @@ SLACK_STATE_SECRET=random_secret_string_here
 # Server Configuration
 PORT=3001
 NODE_ENV=development
+
 FRONTEND_URL=http://localhost:3000
+
 BACKEND_URL=https://localhost:3001
 
 # Database Configuration
@@ -125,6 +130,7 @@ cp .env.example .env
 Edit `frontend/.env`:
 
 ```bash
+
 VITE_API_BASE_URL=https://localhost:3001/api
 ```
 
@@ -147,6 +153,7 @@ HTTPS Server is running on port 3001
 #### 4.2 Accept HTTPS Certificate
 
 1. Open browser and go to: `https://localhost:3001/api/health`
+
 2. You'll see a security warning ⚠️
 3. Click **"Advanced"** or **"Show Details"**
 4. Click **"Proceed to localhost (unsafe)"** or **"Accept the risk"**
@@ -178,6 +185,7 @@ You should see:
 #### 5.2 Test the Connection
 
 1. Open http://localhost:3000 in your browser
+
 2. Click **"Connect to Slack"**
 3. You should be redirected to Slack for authorization
 4. Click **"Allow"** to authorize the app
@@ -213,11 +221,13 @@ You should see:
 #### 1. "redirect_uri did not match" Error
 
 - Make sure your Slack app redirect URL is: `https://localhost:3001/api/auth/slack/callback`
+
 - Ensure you're using HTTPS (not HTTP)
 
 #### 2. "Certificate Error" in Browser
 
 - You must accept the self-signed certificate first
+
 - Go to `https://localhost:3001/api/health` and accept the security warning
 
 #### 3. "Failed to connect to Slack" Error
